@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>/home/suxin/data/service/hive/warehouse</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.local</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://suxin-ThinkPad-E470:9083</value>
+    </property>
+
+</configuration>

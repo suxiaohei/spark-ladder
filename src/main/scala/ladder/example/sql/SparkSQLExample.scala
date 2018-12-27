@@ -55,7 +55,7 @@ object SparkSQLExample {
 
 		private def runBasicDataFrameExample(spark: SparkSession): Unit = {
 				// $example on:create_df$
-				val df = spark.read.json("spark-ladder/src/main/resources/people.json")
+				val df = spark.read.json("src/main/docs/people.json")
 
 				// Displays the content of the DataFrame to stdout
 				df.show()
@@ -174,7 +174,7 @@ object SparkSQLExample {
 				primitiveDS.map(_ + 1).collect() // Returns: Array(2, 3, 4)
 
 				// DataFrames can be converted to a Dataset by providing a class. Mapping will be done by name
-				val path = "spark-ladder/src/main/resources/people.json"
+				val path = "src/main/docs/people.json"
 				val peopleDS = spark.read.json(path).as[Person]
 				peopleDS.show()
 				// +----+-------+
@@ -194,7 +194,7 @@ object SparkSQLExample {
 
 				// Create an RDD of Person objects from a text file, convert it to a Dataframe
 				val peopleDF = spark.sparkContext
-					.textFile("spark-ladder/src/main/resources/people.txt")
+					.textFile("src/main/docs/people.txt")
 					.map(_.split(","))
 					.map(attributes => Person(attributes(0), attributes(1).trim.toInt))
 					.toDF()
@@ -235,7 +235,7 @@ object SparkSQLExample {
 				import spark.implicits._
 				// $example on:programmatic_schema$
 				// Create an RDD
-				val peopleRDD = spark.sparkContext.textFile("spark-ladder/src/main/resources/people.txt")
+				val peopleRDD = spark.sparkContext.textFile("src/main/docs/people.txt")
 
 				// The schema is encoded in a string
 				val schemaString = "name age"

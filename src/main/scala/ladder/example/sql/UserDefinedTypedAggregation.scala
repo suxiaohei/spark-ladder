@@ -68,7 +68,7 @@ object UserDefinedTypedAggregation {
 				import spark.implicits._
 
 				// $example on:typed_custom_aggregation$
-				val ds = spark.read.json("spark-ladder/src/main/resources/employees.json").as[Employee]
+				val ds = spark.read.json("src/main/docs/employees.json").as[Employee]
 				ds.show()
 				// +-------+------+
 				// |   name|salary|

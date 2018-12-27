@@ -13,8 +13,10 @@ object SimpleExample {
 				// Should be some file on your system
 				val logFile = "file:/data/service/spark/spark-2.4.0/README.md"
 				// 创建Session
-				val sparkSession = SparkSession.builder.appName("Simple Application")
-					.master("local[2]").getOrCreate()
+				val sparkSession = SparkSession.builder
+					.appName("Simple Application")
+					.master("local")
+					.getOrCreate()
 				// 读取数据入缓存
 				val logData = sparkSession.read.textFile(logFile).cache()
 				// 从缓存中读取数据，计算
