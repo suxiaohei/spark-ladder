@@ -18,6 +18,17 @@ externalResolvers ++= Seq(
 		"central" at "https://maven.aliyun.com/repository/central"
 )
 
+// 主工程
+lazy val sparkLadder = (project in file(".")).settings(
+	name := "spark-ladder"
+)
+
+// 事例项目
+lazy val example = (project in file("example")).settings(
+	name := "example",
+	libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5"
+)
+
 //// 大数据相关
 //libraryDependencies += "org.apache.spark" %% "spark-graphx" % "2.4.0-cdh6.1.0"
 //libraryDependencies += "org.apache.spark" %% "spark-hive" % "2.4.0-cdh6.1.0"

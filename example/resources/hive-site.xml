@@ -15,7 +15,7 @@
 
     <property>
         <name>hive.metastore.uris</name>
-        <value>thrift://suxin-ThinkPad-E470:9083</value>
+        <value>thrift://suxin-ubuntu-single:9083</value>
     </property>
 
 </configuration>
